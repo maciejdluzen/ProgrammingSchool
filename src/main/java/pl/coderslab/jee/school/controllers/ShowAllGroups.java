@@ -1,6 +1,7 @@
 package pl.coderslab.jee.school.controllers;
 
-import pl.coderslab.jee.school.dao.SolutionDao;
+import pl.coderslab.jee.school.dao.UserGroupDao;
+import pl.coderslab.jee.school.model.UserGroup;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,18 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
-@WebServlet("/exerciseSolution")
-public class ExerciseSolutionServlet extends HttpServlet {
+@WebServlet("/showAllGroups")
+public class ShowAllGroups extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        List<UserGroup> allGroups = UserGroupDao.findAll();
 
-        String idParam = req.getParameter("id");
+        req.setAttribute("allGroups", allGroups);
 
-        Integer id = Integer.parseInt(idParam);
-
-        resp.getWriter().println(SolutionDao.loadById(id));
-
+        getServletContext().getRequestDispatcher("/WEB-INF/views/groups.jsp").forward(req, resp);
     }
 }
+
+// servlet działajacy

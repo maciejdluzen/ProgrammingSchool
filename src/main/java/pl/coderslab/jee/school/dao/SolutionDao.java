@@ -1,6 +1,7 @@
 package pl.coderslab.jee.school.dao;
 
 import pl.coderslab.jee.school.db.DbUtil;
+import pl.coderslab.jee.school.model.Exercise;
 import pl.coderslab.jee.school.model.Solution;
 
 import java.sql.*;
@@ -16,6 +17,24 @@ public class SolutionDao {
     private static final String FIND_ALL_BY_USER_ID = "SELECT * FROM solutions WHERE user_id = ?";
     private static final String FIND_ALL_BY_EXERCISE_ID = "SELECT * FROM solutions WHERE exercise_id = ?";
     private static final String FIND_BY_ID = "SELECT * FROM solutions WHERE id = ?";
+    private static final String FIND_DESCRIPTION = "SELECT description FROM solutions WHERE id = ?";
+
+    public static Solution loadById(Integer id) {
+        try (Connection conn = DbUtil.getConnection();
+            PreparedStatement statement = conn.prepareStatement(FIND_DESCRIPTION)) {
+            statement.setInt(1, id);
+            ResultSet resultSet = statement.executeQuery();
+
+            while(resultSet.next()) {
+                return convertFrom(resultSet);
+            }
+
+            return null;
+
+        } catch (SQLException sqlExc) {
+            throw new RuntimeException("Bład w zapisie");
+        }
+    }
 
     public static void save(Solution modelObj) {
         try (Connection conn = DbUtil.getConnection();
@@ -161,6 +180,4 @@ public class SolutionDao {
         object.setExerciseId(resultSet.getInt("exercise_id"));
         return object;
     }
-
-
 }

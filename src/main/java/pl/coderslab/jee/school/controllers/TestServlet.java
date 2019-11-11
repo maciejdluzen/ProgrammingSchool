@@ -16,9 +16,9 @@ public class TestServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<User> allUsers = UserDao.findAll();
+        List<User> allUsers = UserDao.findAllByGroupId(3);
         for(User user : allUsers) {
-            resp.getWriter().println(user.getUsername());
+            resp.getWriter().println(user.getUsername() + " " + user.getEmail() + " " + user.getPassword() + " " + user.getUserGroupId());
         }
     }
 }
