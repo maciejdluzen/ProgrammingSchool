@@ -8,5 +8,6 @@
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <header>
-    <a href="http://localhost:8080/showAllGroups">Grupy</a>
+    <a href="http://localhost:8080/showAllGroups">Groups</a>
+    <a href="http://localhost:8080/panelAdmin">Admin Panel</a>
 </header>
