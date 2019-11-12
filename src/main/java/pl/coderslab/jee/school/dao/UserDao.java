@@ -17,6 +17,7 @@ public class UserDao {
     private static final String FIND_ALL = "SELECT * FROM users";
     private static final String FIND_BY_ID = "SELECT * FROM users WHERE id = ?";
     private static final String FIND_ALL_BY_GROUP_ID = "SELECT * FROM users WHERE user_group_id = ?";
+    private static final String DELETE = "DELETE FROM users WHERE id = ?";
 
     public static void save(User modelObj) {
         try (Connection conn = DbUtil.getConnection();
@@ -123,4 +124,18 @@ public class UserDao {
         object.setUserGroupId(resultSet.getInt("user_group_id"));
         return object;
     }
+
+    public static void delete(Integer id) {
+        try (Connection conn = DbUtil.getConnection();
+             PreparedStatement statement = conn.prepareStatement(DELETE)) {
+            statement.setInt(1, id);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+
 }

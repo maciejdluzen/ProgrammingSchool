@@ -15,7 +15,7 @@
 <body>
 <section>
     <h2>Groups management panel</h2>
-    <a href='<c:url value="/"/>'>New group</a>
+    <a href='<c:url value="/createGroup"/>'>New group</a>  <%-- dodac sciezke servletu --%>
     <table border="1">
         <tr>
             <th>Group ID</th>
@@ -26,8 +26,8 @@
             <tr>
                 <td>${group.id}</td>
                 <td>${group.name}</td>
-                <td><a href='<c:url value="/?id=${group.id}"/>'>Delete</a></td>
-                <td><a href='<c:url value="/?id=${group.id}"/>'>Update</a></td>
+                <td><a href='<c:url value="/deleteGroup?id=${group.id}"/>'>Delete</a></td> <%-- Usuwanie grupy nie dziala --%>
+                <td><a href='<c:url value="/editGroup?id=${group.id}"/>'>Edit</a></td>
             </tr>
         </c:forEach>
     </table>
