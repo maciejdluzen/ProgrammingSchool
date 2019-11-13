@@ -7,4 +7,4 @@
 --%>
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<footer>Tutaj tez keidys cos bedzie</footer>
+<footer></footer>

@@ -11,18 +11,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Szkoła programowania</title>
+    <title>Programming School</title>
 </head>
 <body>
 <jsp:include page="header.jsp"/>
 <section>
-    <h2>Lista ostatnich rozwiazan</h2>
+    <h2>Latest solutions</h2>
     <table>
         <tr>
             <th>Lp.</th>
-            <th>Id zadania</th>
-            <th>Id uzytkownika</th>
-            <th>Data utworzenia</th>
+            <th>Exercise ID</th>
+            <th>User ID</th>
+            <th>Creation date</th>
+            <th>Actions</th>
         </tr>
         <c:forEach items="${solutions}" var="solution" varStatus="stat">
         <tr>
@@ -30,6 +31,7 @@
             <td>${solution.exerciseId}</td>
             <td>${solution.userId}</td>
             <td>${solution.created}</td>
+            <td><a href='<c:url value="/solutionDetails?id=${solution.id}"/>'>Details</a></td>
         </tr>
         </c:forEach>
     </table>
