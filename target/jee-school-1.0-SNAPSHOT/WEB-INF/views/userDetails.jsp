@@ -13,6 +13,7 @@
     <title>User Details</title>
 </head>
 <body>
+<jsp:include page="header.jsp"/>
     <section>
         <h2>User details: ${userDetails.username}</h2>
         Name: ${userDetails.username} <br>

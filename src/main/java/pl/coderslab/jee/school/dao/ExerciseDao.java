@@ -16,6 +16,7 @@ public class ExerciseDao {
     private static final String UPDATE = "UPDATE exercises SET title = ?, description = ? WHERE id = ?";
     private static final String FIND_ALL = "SELECT * FROM exercises";
     private static final String FIND_BY_ID = "SELECT * FROM exercises WHERE id = ?";
+    private static final String DELETE = "DELETE FROM exercises WHERE id = ?";
 
     public static void save(Exercise modelObj) {
         try (Connection conn = DbUtil.getConnection();
@@ -90,6 +91,17 @@ public class ExerciseDao {
             throw new RuntimeException("Błąd zapisu", sqlExc);
         }
     }
+
+    public static void delete(Integer id) {
+        try (Connection conn = DbUtil.getConnection();
+            PreparedStatement statement = conn.prepareStatement(DELETE)) {
+            statement.setInt(1, id);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     private static Exercise convertFrom(ResultSet resultSet) throws SQLException {
         Exercise object = new Exercise();

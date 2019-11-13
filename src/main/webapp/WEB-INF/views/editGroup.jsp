@@ -12,6 +12,7 @@
     <title>Edit Group </title> <%-- ${group.id} --%>
 </head>
 <body>
+<jsp:include page="header.jsp"/>
 <h2>Edit Group: ${group.name}</h2> <%-- nie dziala dodawanie numeru --%>
 <form action="/editGroup" method="post">
     Group id: <input type="text" name="groupId" value="${group.id}" readonly>

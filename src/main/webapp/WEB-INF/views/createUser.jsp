@@ -13,8 +13,9 @@
     <title>New user addition panel</title>
 </head>
 <body>
+<jsp:include page="header.jsp"/>
 <h2>New user addition panel</h2>
-<form action="/addNewUser" method="post">
+<form action="/createUser" method="post">
     Username: <input type="text" name="username"/>
     <br/>
     Email: <input type="text" name="email"/>

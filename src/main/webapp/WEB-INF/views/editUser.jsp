@@ -13,6 +13,7 @@
     <title>User edit panel</title>
 </head>
 <body>
+<jsp:include page="header.jsp"/>
 <h2>Edit User: ${user.username}</h2>
 <form action="/editUser" method="post">
     User id: <input type="text" name="userId" value="${user.id}" readonly>

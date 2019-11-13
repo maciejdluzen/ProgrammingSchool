@@ -13,6 +13,7 @@
     <title>List of groups in the programming school</title>
 </head>
 <body>
+<jsp:include page="header.jsp"/>
 <section>
     <h2>Current list of groups</h2>
     <table border="1">

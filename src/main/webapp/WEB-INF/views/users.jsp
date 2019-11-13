@@ -13,6 +13,7 @@
     <title>List of users in the programming school</title>
 </head>
 <body>
+<jsp:include page="header.jsp"/>
 <section>
     <h2>Current list of users in the group: ${groupName.name}</h2>
     <table border="1">

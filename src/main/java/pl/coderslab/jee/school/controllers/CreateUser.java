@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/addNewUser")
-public class AddNewUser extends HttpServlet {
+@WebServlet("/createUser")
+public class CreateUser extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -23,7 +23,7 @@ public class AddNewUser extends HttpServlet {
 
         req.setAttribute("allGroups", allGroups);
 
-        getServletContext().getRequestDispatcher("/WEB-INF/views/addNewUser.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/WEB-INF/views/createUser.jsp").forward(req, resp);
     }
 
     @Override

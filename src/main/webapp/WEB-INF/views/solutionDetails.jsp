@@ -12,6 +12,7 @@
     <title>Solution Details: </title>
 </head>
 <body>
+<jsp:include page="header.jsp"/>
 <section>
     <h2>Solution Details: solution ID: ${solutionDetails.id} exercise ID: ${solutionDetails.exerciseId}</h2>
     ${solutionDetails.description}

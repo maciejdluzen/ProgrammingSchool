@@ -13,9 +13,10 @@
     <title>Users management panel</title>
 </head>
 <body>
+<jsp:include page="header.jsp"/>
 <section>
     <h2>Users management panel</h2>
-    <a href='<c:url value="/addNewUser"/>'>New user</a>
+    <a href='<c:url value="/createUser"/>'>New user</a>
     <table border="1">
          <tr>
             <th>User ID</th>

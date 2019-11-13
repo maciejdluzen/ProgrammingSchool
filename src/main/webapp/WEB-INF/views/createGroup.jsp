@@ -12,6 +12,7 @@
     <title>Add new group</title>
 </head>
 <body>
+<jsp:include page="header.jsp"/>
 <form action="/createGroup" method="post">
     Group name: <input type="text" name="groupName"/>
     <br/>

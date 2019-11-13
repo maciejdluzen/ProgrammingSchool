@@ -10,9 +10,13 @@
 <html>
 <head>
     <title>Admin Panel</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
 </head>
 <body>
-<h2>Admin Panel</h2>
+<jsp:include page="header.jsp"/>
+<h2 id="header2">Admin Panel</h2>
 <h3>Select action:</h3>
     <ul>
         <li><a href="http://localhost:8080/manageExercises">Manage exercises</a></li><br>

@@ -13,6 +13,7 @@
     <title>Groups management panel</title>
 </head>
 <body>
+<jsp:include page="header.jsp"/>
 <section>
     <h2>Groups management panel</h2>
     <a href='<c:url value="/createGroup"/>'>New group</a>  <%-- dodac sciezke servletu --%>
